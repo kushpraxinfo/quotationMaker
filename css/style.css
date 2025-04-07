@@ -1,9 +1,113 @@
- /* Custom styles */
- body {
-    padding-bottom: 500px;
-    /* Added to demonstrate scrolling */
-  }
+/* Custom styles */
+body {
+  padding-bottom: 500px;
+  /* Added to demonstrate scrolling */
+}
 
-  .youtube-add{
-    width: 50px;
-  }
+.youtube-add {
+  width: 50px;
+}
+.text-site-color{
+  color: rgb(40,54,147,1);
+}
+.padd-top{
+  padding-top: 100px;
+}
+.font-dark{
+  font-weight: 700;
+}
+/* feature sesction  */
+.font-feature {
+  font-size: 44px;
+  font-weight: 600;
+}
+.feature-para {
+  color: var(--text-light-grey);
+  font-size: 19px;
+  line-height: 30px;
+  text-align: center;
+}
+#feature .set-width {
+  max-width: 660px;
+}
+
+.svg-auto {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 30%;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  color: rgb(39, 39, 168);
+}
+
+.svg-top {
+  margin-top: 23px;
+}
+
+.feature-bg {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.pad-feature {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* feature end  */
+.about-p{
+  font-size: 23px;
+}
+.margin-top-about{
+  margin-top: 9rem;
+}
+.font-p-about{
+  font-size: 21px;
+}
+
+
+/* how it work 
+ */
+ .how-works .max-width-hows{
+  max-width: 660px;
+  color: var(--text-light-grey);
+  font-size: 19px;
+  line-height: 30px;
+  text-align: center;
+ }
+
+ .icon i {
+  font-size: 2.5rem;
+
+ }
+ .about-bg{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+
+ /* needs  */
+ .img-needs{
+  width: 100%;
+ }
+
+ /* download  */
+ #dowload .bg-download{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }
+ .bg-dowload .bg-diff-download{
+  background: rgb(32,26,131);
+background: linear-gradient(90deg, rgba(32,26,131,1) 0%, rgba(32,32,154,1) 51%, rgba(0,212,255,1) 100%);
+ }
+ .img-down{
+  width: 40%;
+ }
+ .img-down .img-left{
+  margin-left: 50px;
+ }
+
+ .mt-testi{
+  margin-top: 100px;
+ }
+ .max-width-testi{
+  max-width: 950px;
+  
+ }
