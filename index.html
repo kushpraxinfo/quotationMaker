@@ -9,9 +9,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <style>
+    .accordion-button::after {
+      content: '+';
+      margin-top: -1.5rem;
+      font-size: 2rem;
+      color: #1e3a8a !important;
+      /* deep blue */
+      font-weight: bold;
+      background-image: none !important;
+      transform: none !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      content: '–';
+    }
+  </style>
 </head>
 
 <body>
@@ -19,7 +39,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
       <!-- Logo and Brand -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="logo.png" alt="" style="height: 50px; ">
         <span class="text-dark">Quotation Maker</span>
       </a>
@@ -34,25 +54,25 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link px-3" href="#">Screenshots</a>
+            <a class="nav-link px-3" href="">Screenshots</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#">Features</a>
+            <a class="nav-link px-3" href="#feature">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#">About</a>
+            <a class="nav-link px-3" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#">How It Works</a>
+            <a class="nav-link px-3" href="#How-work">How It Works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#">Downloads</a>
+            <a class="nav-link px-3" href="#dowload">Downloads</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#">Testimonials</a>
+            <a class="nav-link px-3" href="#testimonials">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#">Support</a>
+            <a class="nav-link px-3" href="#support">Support</a>
           </li>
         </ul>
       </div>
@@ -63,24 +83,28 @@
   <section id="home">
     <div class="container-fluid mt-5">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h1>Create Professional Invoices in Seconds with</h1>
-            <span>Quotation Maker</span>
-            <div class="youtube-add">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/yGBEtDhF6aQ?si=If6PEFvxBGEcmUms"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <h2>Download the app today & try it for free!</h2>
+        <div class="row gy-5 d-flex align-items-center ">
+          <div class="col-lg-6 col-12 ">
+            <h1 class="banner-h1"> Create Professional Invoices in Seconds with
+              <span class="weight-400 text-site-color">Quotation Maker</span>
+            </h1>
 
-            <div class="py-2">
-              <a href="">
-                <img src="./img/Google-play.png" alt="" style="width: 120px;">
+            <iframe width="330" height="200" class="yt-frame"
+              src="https://www.youtube.com/embed/yGBEtDhF6aQ?si=B99GjXkf6ABSZCl_" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+            <p class="color-darkBlue p-banner">Download the app today & try it for free!</p>
+
+            <div class="download-images d-flex gap-2">
+              <a href="https://play.google.com/store/apps/details?id=com.praxinfo.quotationmaker&amp;utm_source=pdf&amp;utm_medium=website&amp;utm_campaign=purchase_order"
+                target="_blank">
+                <img src="./img/Google-play.png" alt="Appstore image">
               </a>
-              <a href="">
-                <img src="./img/app-store.png" alt="" style="width: 120px;">
+              <a href="https://apps.apple.com/us/app/quotation-maker/id1618883268?utm_source=pdf&amp;utm_medium=website&amp;utm_campaign=purchase_order"
+                target="_blank">
+                <img src="./img/app-store.png" alt="Playstore image">
               </a>
             </div>
           </div>
@@ -95,36 +119,6 @@
                 style="z-index: -1; width: 100%; padding-top: 100%; background: radial-gradient(circle at center, #eef2ff, #c7d2fe);">
               </div>
 
-              <!-- Top Right SVG -->
-              <div class="position-absolute top-0 end-0 mt-2 me-2">
-                <!-- SVG here -->
-                <g clip-path="url(#clip0_5_3665)">
-                  <path
-                    d="M22.378 0.4157C22.3814 0.342879 22.3851 0.270712 22.3891 0.199219C22.3857 0.271606 22.382 0.343766 22.378 0.4157C22.0401 7.83785 25.7079 22.0514 43.163 21.2025C36.0333 21.7022 21.9045 26.7677 22.3875 43.0291C22.1659 35.9367 17.5749 21.9221 1.00683 21.8442C0.856728 21.8465 0.709534 21.8469 0.56543 21.8454C0.713499 21.8439 0.86063 21.8435 1.00683 21.8442C8.04005 21.7355 21.4537 17.3609 22.378 0.4157Z"
-                    fill="#7083F5"></path>
-                  <path
-                    d="M59.3487 24.4888C59.3506 24.4451 59.3528 24.4018 59.3552 24.3589C59.3532 24.4023 59.351 24.4456 59.3487 24.4888C59.1459 28.942 61.3466 37.4702 71.8196 36.9608C67.5418 37.2606 59.0645 40.3 59.3543 50.0568C59.2213 45.8014 56.4667 37.3926 46.5259 37.3459C46.4359 37.3473 46.3475 37.3475 46.261 37.3466C46.3499 37.3457 46.4382 37.3454 46.5259 37.3459C50.7458 37.2807 58.794 34.6559 59.3487 24.4888Z"
-                    fill="#19DEBB"></path>
-                </g>
-              </div>
-
-              <!-- Bottom Left SVG -->
-              <div class="position-absolute bottom-0 start-0 mb-4 ms-2">
-                <svg width="65" height="36" viewBox="0 0 65 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M55.4149 1.83203C53.339 1.57898 51.3475 2.4214 49.2904 4.18456C45.9052 7.08611 40.0313 8.52953 34.7368 4.19769C32.4686 2.34195 30.4917 2.04856 28.8583 2.32079C27.1672 2.60264 25.7448 3.50424 24.6267 4.24961C22.8559 5.43014 20.9059 6.67067 18.66 6.9618C16.3417 7.2623 13.8664 6.54246 11.0465 4.19256C8.68539 2.22501 6.66504 1.84655 5.11312 2.08531C3.52522 2.32961 2.288 3.24185 1.57603 4.08328C1.25719 4.46008 0.69326 4.50708 0.316454 4.18824C-0.0603521 3.86941 -0.107346 3.30548 0.21149 2.92867C1.13803 1.83367 2.73868 0.642115 4.84131 0.318626C6.97991 -0.0103986 9.50274 0.579362 12.1908 2.81939C14.7333 4.93815 16.7266 5.40998 18.4302 5.18915C20.2062 4.95894 21.831 3.96513 23.6352 2.76234L24.131 3.50597L23.6352 2.76234C24.7515 2.01814 26.4572 0.908837 28.5644 0.557635C30.7295 0.196804 33.2212 0.648204 35.8687 2.81426C40.3566 6.48615 45.2562 5.28815 48.1272 2.82739C50.3886 0.889088 52.8657 -0.279434 55.6312 0.057691C58.3691 0.391448 61.1615 2.17558 64.1309 5.60179C64.4541 5.9748 64.4138 6.53924 64.0408 6.86252C63.6678 7.18579 63.1034 7.14547 62.7801 6.77246C59.9402 3.49563 57.5184 2.08846 55.4149 1.83203Z"
-                    fill="#7083F5"></path>
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M55.4149 11.2024C53.339 10.9493 51.3475 11.7918 49.2904 13.5549C45.9052 16.4565 40.0312 17.8999 34.7367 13.5681C32.4686 11.7123 30.4916 11.4189 28.8583 11.6912C27.1671 11.973 25.7447 12.8746 24.6267 13.62C22.8559 14.8005 20.9058 16.041 18.66 16.3322C16.3417 16.6327 13.8663 15.9128 11.0464 13.5629C8.68536 11.5954 6.66501 11.2169 5.11309 11.4557C3.52519 11.7 2.28797 12.6122 1.576 13.4536C1.25716 13.8304 0.69323 13.8774 0.316424 13.5586C-0.0603826 13.2398 -0.107377 12.6758 0.211459 12.299C1.138 11.204 2.73865 10.0125 4.84128 9.68899C6.97988 9.35996 9.50271 9.94972 12.1907 12.1897C14.7333 14.3085 16.7266 14.7803 18.4302 14.5595C20.2061 14.3293 21.831 13.3355 23.6352 12.1327L24.1309 12.8763L23.6352 12.1327C24.7515 11.3885 26.4572 10.2792 28.5644 9.928C30.7294 9.56717 33.2212 10.0186 35.8686 12.1846C40.3565 15.8565 45.2562 14.6585 48.1271 12.1978C50.3885 10.2594 52.8657 9.09093 55.6312 9.42805C58.3691 9.76181 61.1614 11.5459 64.1308 14.9722C64.4541 15.3452 64.4138 15.9096 64.0408 16.2329C63.6678 16.5561 63.1033 16.5158 62.7801 16.1428C59.9401 12.866 57.5184 11.4588 55.4149 11.2024Z"
-                    fill="#7083F5"></path>
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M55.4149 20.5825C53.339 20.3295 51.3475 21.1719 49.2904 22.935C45.9052 25.8366 40.0312 27.28 34.7367 22.9482C32.4686 21.0924 30.4916 20.7991 28.8583 21.0713C27.1671 21.3531 25.7447 22.2547 24.6267 23.0001C22.8559 24.1806 20.9058 25.4212 18.66 25.7123C16.3417 26.0128 13.8663 25.293 11.0464 22.9431C8.68536 20.9755 6.66501 20.597 5.11309 20.8358C3.52519 21.0801 2.28797 21.9923 1.576 22.8338C1.25716 23.2106 0.69323 23.2576 0.316424 22.9387C-0.0603826 22.6199 -0.107377 22.056 0.211459 21.6792C1.138 20.5842 2.73865 19.3926 4.84128 19.0691C6.97988 18.7401 9.50271 19.3299 12.1907 21.5699C14.7333 23.6886 16.7266 24.1605 18.4302 23.9396C20.2061 23.7094 21.831 22.7156 23.6352 21.5128L24.1309 22.2565L23.6352 21.5128C24.7515 20.7686 26.4572 19.6593 28.5644 19.3081C30.7294 18.9473 33.2212 19.3987 35.8686 21.5647C40.3565 25.2366 45.2562 24.0386 48.1271 21.5779C50.3885 19.6396 52.8657 18.4711 55.6312 18.8082C58.3691 19.1419 61.1614 20.9261 64.1308 24.3523C64.4541 24.7253 64.4138 25.2897 64.0408 25.613C63.6678 25.9363 63.1033 25.896 62.7801 25.523C59.9401 22.2461 57.5184 20.8389 55.4149 20.5825Z"
-                    fill="#7083F5"></path>
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M55.4149 29.9622C53.339 29.7091 51.3475 30.5515 49.2904 32.3147C45.9052 35.2162 40.0312 36.6597 34.7367 32.3278C32.4686 30.4721 30.4916 30.1787 28.8583 30.4509C27.1671 30.7328 25.7447 31.6344 24.6267 32.3797C22.8559 33.5603 20.9058 34.8008 18.66 35.0919C16.3417 35.3924 13.8663 34.6726 11.0464 32.3227C8.68536 30.3551 6.66501 29.9767 5.11309 30.2154C3.52519 30.4597 2.28797 31.372 1.576 32.2134C1.25716 32.5902 0.69323 32.6372 0.316424 32.3184C-0.0603826 31.9995 -0.107377 31.4356 0.211459 31.0588C1.138 29.9638 2.73865 28.7722 4.84128 28.4488C6.97988 28.1197 9.50271 28.7095 12.1907 30.9495C14.7333 33.0683 16.7266 33.5401 18.4302 33.3193C20.2061 33.0891 21.831 32.0953 23.6352 30.8925L24.1309 31.6361L23.6352 30.8925C24.7515 30.1483 26.4572 29.039 28.5644 28.6878C30.7294 28.3269 33.2212 28.7783 35.8686 30.9444C40.3565 34.6163 45.2562 33.4183 48.1271 30.9575C50.3885 29.0192 52.8657 27.8507 55.6312 28.1878C58.3691 28.5216 61.1614 30.3057 64.1308 33.7319C64.4541 34.1049 64.4138 34.6694 64.0408 34.9926C63.6678 35.3159 63.1033 35.2756 62.7801 34.9026C59.9401 31.6258 57.5184 30.2186 55.4149 29.9622Z"
-                    fill="#7083F5"></path>
-                </svg>
-              </div>
             </div>
           </div>
         </div>
@@ -134,31 +128,30 @@
   </section>
 
   <!-- second part  -->
-  <section id="second-part" class="container-fluid mt-5 bg-light mb-5">
-
-    <div class="container">
-      <div class="row">
-        <div class="col py-5 text-center">
+  <section id="second-part" class="container-fluid  bg-light mb-5  ">
+    <div class="container margin-second">
+      <div class="row g-5 d-flex justify-content-center">
+        <div class="col-12 col-md-6 col-lg-auto width-scard py-3 text-center">
           <img src="./img/smile.png" alt="">
           <h3 class="mt-2">2 Lakh +</h3>
           <p>Happy customers</p>
         </div>
-        <div class="col py-5 text-center">
+        <div class="col-12 col-md-6 col-lg-auto width-scard py-3 text-center">
           <img src="./img/mobile-phone.png" alt="">
           <h3 class="mt-2">FREE</h3>
           <p>Android & ios Mobile App</p>
         </div>
-        <div class="col py-5 text-center">
+        <div class="col-12 col-md-6 col-lg-auto width-scard py-3 text-center">
           <img src="./img/social.png" alt="">
           <h3 class="mt-2">Rated 4.8/5</h3>
           <p>on play & App Store</p>
         </div>
-        <div class="col py-5 text-center">
+        <div class="col-12 col-md-6 col-lg-auto width-scard py-3 text-center">
           <img src="./img/mobile-phone.png" alt="">
           <h3 class="mt-2">Multi-Device</h3>
           <p>Use together on <br> Mobile/Desktop</p>
         </div>
-        <div class="col py-5 text-center">
+        <div class="col-12 col-md-6 col-lg-auto width-scard py-3 text-center">
           <img src="./img/people.png" alt="">
           <h3>Multi-User</h3>
           <p>User Management feature</p>
@@ -168,21 +161,98 @@
 
   </section>
 
+  <!-- App Screenshot Section -->
+  <section id="screenshot" class="mb-5">
+    <div class="container text-center set-width p-3 mb-5">
+      <h1 class="font-feature heading fs-1">App Screenshots</h1>
+      <p class="feature-para pt-4">
+        Check out the App Screenshots to get a glimpse of the user-friendly interface and customizable templates of
+        Quotation Maker.
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="screenshot-slider">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider1.jpg" alt="Screenshot 1" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider2.jpg" alt="Screenshot 2" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider3.jpg" alt="Screenshot 3" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider3.jpg" alt="Screenshot 3" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider3.jpg" alt="Screenshot 3" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider3.jpg" alt="Screenshot 3" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider3.jpg" alt="Screenshot 3" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider3.jpg" alt="Screenshot 3" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="phone-frame">
+                <img src="./img/slider3.jpg" alt="Screenshot 3" />
+              </div>
+            </div>
+            <!-- Add more slides as needed -->
+          </div>
+          <div class="custom-swiper-nav text-center mt-4">
+            <button id="customPrevBtn" class="custom-nav-btn">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button id="customNextBtn" class="custom-nav-btn">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- feature component  -->
   <section id="feature">
     <div class="container-fluid">
-      <div class="container text-center set-width pt-3 mb-5">
-        <h1 class="font-feature">Experience the Power of <br> Quotation Maker - Unleash the <br> Best Features!</h1>
+      <div class="container text-center set-width p-3 mb-5">
+        <h1 class="font-feature heading fs-1">Experience the Power of <br> Quotation Maker - Unleash the <br> Best
+          Features!</h1>
         <p class="feature-para pt-4">Quotation Maker is designed to simplify and streamline the quotation process,
           making it an ideal choice for small business owners, contractors, merchants, and professionals across various
           industries who seek a professional and user-friendly quotation tool.</p>
       </div>
 
-      <div class="container mt-5 feature-bg">
-        <div class="row pad-feature">
+      <div class="container mt-5 shadow p-5 ">
+        <div class="row pad-feature ">
           <div class="col-lg-4 text-center px-5">
-            <div class=" text-center svg-auto">
+            <div class="text-center svg-auto">
               <svg width="50" height="50" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"
                 class="svg-top">
                 <g clip-path="url(#clip0_28_4)">
@@ -364,96 +434,102 @@
 
 
   <!-- about  -->
-  <section id="about mb-5 py-5">
-    <div class="container-fluid">
-      <div class="container margin-top-about">
-        <div class="row ">
-          <div class="col-lg-6">
-            <div class="img-about text-center">
-              <img src="./img/about1.png" alt="" style="height: 600px ;">
-            </div>
+  <section id="about" class="mb-5 py-5">
+    <div class="container-fluid feature-top">
+      <div class="container py-5">
+        <div class="row align-items-center g-3">
+          <!-- Left Image -->
+          <div class="col-lg-6 col-12 text-center px-0">
+            <img src="./img/about1.png" alt="Quotation Maker" class="img-fluid rounded business-img">
           </div>
-          <div class="col-lg-6">
-            <h1 class="mt-4">Simplify Your Billing with</h1>
-            <h1><span class="text-site-color ">Quotation Maker</span></h1>
-            <p class="about-p mt-5">Quotation Maker is the perfect mobile app for small business owners, contractors,
-              and merchants who need a straightforward yet professional solution for handling estimates, invoices,
-              receipts, bills, and quotations. This versatile application allows users to effortlessly create and share
-              these critical business documents directly from their phone, streamlining billing operations and
-              expediting payment processes. By enabling easy management of invoices, receipts, bills, estimates, and
-              quotations on the go, Quotation Maker ensures that you can maintain smooth and efficient financial
-              operations wherever you are.</p>
+
+          <!-- Right Text Content -->
+          <div class="col-lg-6 col-12 ">
+            <h1 class="fw-bold text-dark mb-0">Simplify Your Billing with</h1>
+            <h1 class="fw-bold text-site-color">Quotation Maker</h1>
+            <p class="mt-4 about-paragraph">
+              Quotation Maker is the perfect mobile app for small business owners, contractors, and merchants who need a
+              straightforward yet professional solution for handling estimates, invoices, receipts, bills, and
+              quotations.
+              This versatile application allows users to effortlessly create and share these critical business documents
+              directly from their phone, streamlining billing operations and expediting payment processes. By enabling
+              easy
+              management of invoices, receipts, bills, estimates, and quotations on the go, Quotation Maker ensures that
+              you
+              can maintain smooth and efficient financial operations wherever you are.
+            </p>
           </div>
         </div>
       </div>
+
 
       <!-- 2sd  -->
-      <div class="container margin-top-about">
-        <div class="row te-5">
-
-          <div class="col-lg-6 ">
-            <h1 class="mt-4 text-dark ">Comprehensive Features <span class="text-site-color">For</span></h1>
-            <h1><span class="text-site-color "> Professional Invoicing</span></h1>
-
-            <div class="some-line-about mt-4 ">
-              <h5 class="mb-5 font-dark">Quotation Maker offers a wide array of features that cater to all your billing
-                needs. Key functionalities include:</h5>
-            </div>
-
-            <p class="font-p-about">
-              Generate estimates, invoices, receipts, delivery notes, purchase orders, proforma invoices, and bills for
-              any product or service.</p>
-            <p class="font-p-about">Customize invoice templates and fields to your business, add your company logo, and
-              create PDFs with a built-in PDF maker.</p>
-            <p class="font-p-about">
-              Send documents via email, messaging apps (e.g., WhatsApp), or text.</p>
-            <p class="font-p-about">
-
-              Sign invoices or estimates, attach images, and manage invoice statuses like paid and unpaid.
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <!-- Left Side Text Content -->
+          <div class="col-lg-6">
+            <h1 class="fw-bold text-dark">
+              Comprehensive Features <span class="text-site-color">for</span>
+            </h1>
+            <h1 class="fw-bold text-site-color mb-4">Professional Invoicing</h1>
+            <p class="fw-semibold text-secondary">
+              Quotation Maker offers a wide array of features that cater to all your billing needs. Key functionalities
+              include:
             </p>
-            <p class="font-p-about">
-              Easily convert quotations or estimates into invoices with a single click.
-            </p>
-            <p class="font-p-about">
-              View how your documents will look before finalizing them.</p>
-            <p class="font-p-about">
-              Keep track of your clients and the items you bill for, while customizing taxes, discounts, and other
-              details</p>
+            <ul class="feature-list mt-4">
+              <li>Generate estimates, invoices, receipts, delivery notes, purchase orders, proforma invoices, and bills
+                for any product or service.</li>
+              <li>Customize invoice templates and fields to your business, add your company logo, and create PDFs with a
+                built-in PDF maker.</li>
+              <li>Send documents via email, messaging apps (e.g., WhatsApp), or text.</li>
+              <li>Sign invoices or estimates, attach images, and manage invoice statuses like paid and unpaid.</li>
+              <li>Easily convert quotations or estimates into invoices with a single click.</li>
+              <li>View how your documents will look before finalizing them.</li>
+              <li>Keep track of your clients and the items you bill for, while customizing taxes, discounts, and other
+                details.</li>
+            </ul>
           </div>
 
-          <div class="col-lg-6">
-            <div class="img-about text-center">
-              <img src="./img/about2.png" alt="" style="height: 550px ;">
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="container margin-top-about">
-        <div class="row ">
-          <div class="col-lg-6">
-            <div class="img-about text-center">
-              <img src="./img/about3.png" alt="" style="height: 600px ;">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h1 class="mt-4">A complete solution for </h1>
-            <h1><span class="text-site-color ">Business Finances</span></h1>
-            <p class="about-p mt-5 text-start">Quotation Maker stands out by consolidating all your invoicing and
-              estimating tasks into one efficient platform. It not only helps you create professional-looking documents
-              quickly but also keeps everything organized so you can monitor who has paid and who hasn't. The app
-              supports extensive customization options, allowing you to personalize your invoices and estimates with
-              logos, websites, and other pertinent details. By providing real-time previews, easy conversions from
-              estimates to invoices, and simple export options, Quotation Maker acts like a personal assistant for your
-              business finances, ensuring that your billing operations are both smooth and effective.</p>
+          <!-- Right Side Image -->
+          <div class="col-lg-6 text-center mt-4 mt-lg-0">
+            <img src="./img/about2.png" alt="Invoice App Preview" class="img-fluid mobile-mockup">
           </div>
         </div>
       </div>
+
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <!-- Left Image -->
+          <div class="col-lg-6 text-center">
+            <img src="./img/about3.png" alt="Business Finances" class="img-fluid rounded business-img">
+          </div>
+
+          <!-- Right Text Content -->
+          <div class="col-lg-6">
+            <h1 class="fw-bold text-dark mb-0">A Complete Solution for</h1>
+            <h1 class="fw-bold text-site-color">Business Finances</h1>
+            <p class="mt-4 about-paragraph">
+              Quotation Maker stands out by consolidating all your invoicing and estimating tasks into one efficient
+              platform.
+              It not only helps you create professional-looking documents quickly but also keeps everything organized so
+              you
+              can monitor who has paid and who hasn't. The app supports extensive customization options, allowing you to
+              personalize your invoices and estimates with logos, websites, and other pertinent details. By providing
+              real-time
+              previews, easy conversions from estimates to invoices, and simple export options, Quotation Maker acts
+              like a
+              personal assistant for your business finances, ensuring that your billing operations are both smooth and
+              effective.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- how works  -->
-  <section class="how-works mt-5 padd-top mb-5">
+  <section id="How-work" class="how-works mt-5 mb-5">
     <div class="container-fluid mb-5">
       <div class="container max-width-hows">
         <h2 class="font-feature text-center font-dark "> How it Works?</h2>
@@ -461,8 +537,8 @@
           app's customizable templates, pricing and sales management features.</p>
       </div>
     </div>
-    <div class="imgpart padd-top about-bg mt-5">
-      <div class="container px-3 py-5">
+    <div class=" container-fluid  width-justi-how shadow px-5 mt-5">
+      <div class="container  py-5">
         <div class="row text-center">
           <div class="col-lg-3">
             <div class="icon svg-auto"><i class="fa-solid fa-download m-4"></i></div>
@@ -512,12 +588,12 @@
   </section>
 
   <!-- needs  -->
-  <section id="needs mt-5 mb-5">
+  <section id="needs" class="mt-5 mt-8 mb-5">
     <div class="container-fluid">
       <div class="container mt-5">
-        <div class="row">
+        <div class="row d-flex flex-column align-items-center ">
           <div class="col-12 text-center">
-            <h2 class="font-feature">We Cover All Your Customizable Needs</h2>
+            <h2 class="heading">We Cover All Your Customizable Needs</h2>
           </div>
           <div class="mt-5">
             <img src="./img/banner.png" alt="" class="img-needs">
@@ -529,253 +605,557 @@
 
 
   <!-- Dowload  -->
-  <section id="dowload mt-5">
+  <section id="dowload" class="mt-5">
     <div class="container-fluid">
       <div class="container py-5 bg-dowload">
-        <div class="row bg-diff-download">
-          <div class="col-lg-5 px-5">
-            <div class="mt-3 text-white">
+        <div class="row bg-diff-download align-items-center">
+          <!-- LEFT CONTENT -->
+          <div class="col-lg-5 col-md-12 px-4 text-center text-lg-start">
+            <div class="mt-4 text-white">
               <h1>"Download Quotation Maker for optimized quotes.</h1>
             </div>
             <div class="mt-3 text-white">
-              <p>Effortlessly create professional quotes with Quotation Maker app. Download now for optimized quotes,
-                streamlined process, and increased business growth.</p>
+              <p>
+                Effortlessly create professional quotes with Quotation Maker app.
+                Download now for optimized quotes, streamlined process, and increased business growth.
+              </p>
             </div>
-            <div class="mt-2">
-              <a href=""><img src="./img/Google-play.png" alt="" style="height: 40px;"> </a>
-              <a href=""><img src="./img/app-store.png" alt="" style="height: 40px;"> </a>
+            <div class="mt-4">
+              <a href="#"><img src="./img/Google-play.png" alt="" style="height: 40px;" class="me-2" /></a>
+              <a href="#"><img src="./img/app-store.png" alt="" style="height: 40px;" /></a>
             </div>
           </div>
-          <div class="col-lg-7">
-            <div class="px-3">
-              <img src="./img/download1.png" alt="" class="img-down">
-              <img src="/img/download2.png" alt="" class="img-down img-left">
+  
+          <!-- RIGHT IMAGES -->
+          <div class="col-lg-7 col-md-12 mt-4 mt-lg-0">
+            <div class="d-flex justify-content-center justify-content-lg-around align-items-end flex-wrap">
+              <img src="./img/download1.png" alt="img1" class="img-down-1 mb-3 mb-lg-0" />
+              <img src="./img/download2.png" alt="img2" class="img-down-2" />
             </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="testimonials mt-5 mt-testi">
-    <div class="container-fluid">
-
-      <div class="container text-center">
-
-        <h1 class=" mb-5">Frequently Asked Questions</h1>
-        <div class="testinormal max-width-testi ">
-          <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  what is a quotation in business?
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">A quotation is a document that a seller provides to a buyer to offer goods
-                  or
-                  services at a stated price under specified conditions.</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  How does Quotation Maker work ?
-                </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  Quotation Maker is a user-friendly platform that empowers you to create professional quotations,
-                  invoices,
-                  proforma invoices, purchase orders, and delivery note quickly and efficiently. Create professional
-                  documents, customize templates to align with your brand, and run your business 5x faster. Share your
-                  documents with customers seamlessly and generate comprehensive business documents in minutes.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  IS Quotation Maker free ?
-                </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-
-                  Quotation Maker offers both free and paid plans. The free plan includes basic features, while paid
-                  plans
-                  offer additional functionality. Visit our Pricing page for details; the free plan allows for creating
-                  up
-                  to 25 documents.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapseThree">
-                  Can I create an Invoice from the quotation generator?
-                </button>
-              </h2>
-              <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-
-                  Quotation Maker offers both free and paid plans. The free plan includes basic features, while paid
-                  plans
-                  offer additional functionality. Visit our Pricing page for details; the free plan allows for creating
-                  up
-                  to 25 documents.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapseThree">
-                  IS Quotation Maker secure?
-                </button>
-              </h2>
-              <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-
-                  Quotation Maker offers both free and paid plans. The free plan includes basic features, while paid
-                  plans
-                  offer additional functionality. Visit our Pricing page for details; the free plan allows for creating
-                  up
-                  to 25 documents.
-                </div>
-              </div>
-            </div>
-
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapseThree">
-                  How can i sign up?
-                </button>
-              </h2>
-              <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  Signing up is easy. Click the 'Sign Up' button, enter your email and password, and start creating
-                  professional quotations today.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapseThree">
-                  Can I export my Quotation?
-                </button>
-              </h2>
-              <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  Yes, Quotation Maker allows you to export your quotations in PDF format, making it easy to share via
-                  WhatsApp, email, and other methods with your customers.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapseThree">
-                  Can I customize templates?
-                </button>
-              </h2>
-              <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  Absolutely! Customize templates with your business letterhead, logo, colors, and layout to create
-                  professional quotations aligned with your company.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapseThree">
-                  How can I get support?
-                </button>
-              </h2>
-              <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-
-                  We are always here to help you. Contact our support team for assistance with any questions or issues.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapseThree">
-                  Is there a subscription plan?
-                </button>
-              </h2>
-              <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-
-                  Yes, Quotation Maker offers subscription plans with advanced features. Choose a plan that suits your
-                  needs.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapseThree">
-                  What payment methods are accepted?
-                </button>
-              </h2>
-              <div id="flush-collapse11" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  We accept credit cards, debit cards, and PayPal for your convenience.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapseThree">
-                  still have questions?
-                </button>
-              </h2>
-              <div id="flush-collapse12" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-
-                  Contact our support team for further assistance.
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
   </section>
+  
+
+  <!-- Testinormal  -->
+  <section class="testimonial-section py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">What Our Customers are Saying</h2>
+      <p class="text-muted mb-5">
+        Users are satisfied with Quotation Maker, praising its ease of use and time-saving features, which they share in
+        their experience.
+      </p>
+
+      <!-- Carousel Wrapper with Buttons -->
+      <div class="position-relative carousel-wrapper overflow-hidden">
+        <div class="testimonial-carousel d-flex overflow-auto pb-3" id="testimonial-carousel">
+
+          <!-- Card 1 -->
+          <div class="testimonial-card mx-3">
+            <p>Excellent Application. Before I m make a quotation in Excel but it's so difficult. But now I installed
+              this app and I love it. I recommend it to all!</p>
+            <hr>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://i.pravatar.cc/50?img=32" alt="user" class="rounded-circle me-2" width="40">
+                <div>
+                  <strong>Alex Glorio</strong><br>
+                  <small class="text-muted">Web Entrepreneur</small>
+                </div>
+              </div>
+              <div class="text-end">
+                <strong>5.0</strong><br>
+                <span class="text-warning">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="testimonial-card mx-3 featured-card">
+            <p>SIMPLY Fantastic! Takes less than 3 minutes. Forms everything in a professional and sophisticated order.
+              Again superb App. Very useful!</p>
+            <hr>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://i.pravatar.cc/50?img=12" alt="user" class="rounded-circle me-2" width="40">
+                <div>
+                  <strong>Jonathon Smith</strong><br>
+                  <small class="text-muted">Web Entrepreneur</small>
+                </div>
+              </div>
+              <div class="text-end">
+                <strong>5.0</strong><br>
+                <span class="text-warning">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card mx-3">
+            <p>Before this app I was always failing to submit quotations on time. Now I’m very happy to install this
+              app, very fast to submit in few minutes.</p>
+            <hr>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://i.pravatar.cc/50?img=52" alt="user" class="rounded-circle me-2" width="40">
+                <div>
+                  <strong>Jonathon Smith</strong><br>
+                  <small class="text-muted">Web Entrepreneur</small>
+                </div>
+              </div>
+              <div class="text-end">
+                <strong>5.0</strong><br>
+                <span class="text-warning">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <!-- Duplicate for smoother animation -->
+          <div class="testimonial-card mx-3">
+            <p>Before this app I was always failing to submit quotations on time. Now I’m very happy to install this
+              app, very fast to submit in few minutes.</p>
+            <hr>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://i.pravatar.cc/50?img=52" alt="user" class="rounded-circle me-2" width="40">
+                <div>
+                  <strong>Jonathon Smith</strong><br>
+                  <small class="text-muted">Web Entrepreneur</small>
+                </div>
+              </div>
+              <div class="text-end">
+                <strong>5.0</strong><br>
+                <span class="text-warning">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card mx-3">
+            <p>Before this app I was always failing to submit quotations on time. Now I’m very happy to install this
+              app, very fast to submit in few minutes.</p>
+            <hr>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://i.pravatar.cc/50?img=52" alt="user" class="rounded-circle me-2" width="40">
+                <div>
+                  <strong>Jonathon Smith</strong><br>
+                  <small class="text-muted">Web Entrepreneur</small>
+                </div>
+              </div>
+              <div class="text-end">
+                <strong>5.0</strong><br>
+                <span class="text-warning">★★★★★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <button class="arrow-btn" id="scrollLeft"><span>&larr;</span></button>
+          <button class="arrow-btn" id="scrollRight"><span>&rarr;</span></button>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+
+
+  <section id="testimonials" class="mt-5">
+    <div class="container">
+      <h1 class="mb-5 text-center fw-bold">Frequently Asked Questions</h1>
+
+      <div class="accordion accordion-flush" id="faqAccordion">
+        <!-- FAQ Item -->
+        <div class="accordion-item border">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne">
+              What is a quotation in business?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              A quotation is a document that a seller provides to a buyer to offer goods or services at a stated price
+              under specified conditions.
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other questions -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              How does Quotation Maker work ?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              Quotation Maker is a user-friendly platform that empowers you to create professional quotations,
+              invoices,
+              proforma invoices, purchase orders, and delivery note quickly and efficiently. Create professional
+              documents, customize templates to align with your brand, and run your business 5x faster. Share your
+              documents with customers seamlessly and generate comprehensive business documents in minutes.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              IS Quotation Maker free ?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+              Quotation Maker offers both free and paid plans. The free plan includes basic features, while paid
+              plans
+              offer additional functionality. Visit our Pricing page for details; the free plan allows for creating
+              up
+              to 25 documents.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapseThree">
+              Can I create an Invoice from the quotation generator?
+            </button>
+          </h2>
+          <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+              Quotation Maker offers both free and paid plans. The free plan includes basic features, while paid
+              plans
+              offer additional functionality. Visit our Pricing page for details; the free plan allows for creating
+              up
+              to 25 documents.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapseThree">
+              IS Quotation Maker secure?
+            </button>
+          </h2>
+          <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+              Quotation Maker offers both free and paid plans. The free plan includes basic features, while paid
+              plans
+              offer additional functionality. Visit our Pricing page for details; the free plan allows for creating
+              up
+              to 25 documents.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapseThree">
+              How can i sign up?
+            </button>
+          </h2>
+          <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              Signing up is easy. Click the 'Sign Up' button, enter your email and password, and start creating
+              professional quotations today.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapseThree">
+              Can I export my Quotation?
+            </button>
+          </h2>
+          <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              Yes, Quotation Maker allows you to export your quotations in PDF format, making it easy to share via
+              WhatsApp, email, and other methods with your customers.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapseThree">
+              Can I customize templates?
+            </button>
+          </h2>
+          <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              Absolutely! Customize templates with your business letterhead, logo, colors, and layout to create
+              professional quotations aligned with your company.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapseThree">
+              How can I get support?
+            </button>
+          </h2>
+          <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+              We are always here to help you. Contact our support team for assistance with any questions or issues.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapseThree">
+              Is there a subscription plan?
+            </button>
+          </h2>
+          <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+              Yes, Quotation Maker offers subscription plans with advanced features. Choose a plan that suits your
+              needs.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapseThree">
+              What payment methods are accepted?
+            </button>
+          </h2>
+          <div id="flush-collapse11" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              We accept credit cards, debit cards, and PayPal for your convenience.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapseThree">
+              still have questions?
+            </button>
+          </h2>
+          <div id="flush-collapse12" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+              Contact our support team for further assistance.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+    </div>
+  </section>
+
+
+  <!-- connted  -->
+
+  <div class="contact-bg">
+    <section id="support class py-5 text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-3 text-center">Let's Stay Connected</h2>
+        <p class="mb-5 text-muted">Connect with us to stay updated on new features, tips, and tricks to optimize your
+          quotation process.</p>
+
+        <div class="contact-wrapper text-start">
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Enter your name">
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Company (optional)">
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="Enter your email">
+              </div>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" placeholder="Enter your phone number">
+              </div>
+              <div class="col-12">
+                <textarea class="form-control form-textarea" placeholder="Tell us about yourself"></textarea>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <!-- Dummy reCAPTCHA box -->
+                <div class="fake-recaptcha">
+                  <input type="checkbox" id="recaptcha-check">
+                  <label for="recaptcha-check">I'm not a robot</label>
+                  <div class="recaptcha-footer">reCAPTCHA<br><small>Privacy - Terms</small></div>
+                </div>
+              </div>
+              <div class="col-12 text-center mt-3">
+                <small class="text-muted">By clicking contact us button, you agree our terms and policy,</small>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn form-btn mt-3">Contact Us</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- footer  -->
+  <footer class="container-fluid mb-0">
+    <div class="container">
+      <div class="row g-5 py-5">
+        <div class="col-12 col-xl-3">
+          <div class="logo mb-4">
+            <img src="logo.png" alt="Logo" class="logo" style="width: 50px;">
+            <a href="#" class="logo-text text-decoration-none">Quotation Maker</a>
+          </div>
+          <div class="icons d-flex gap-3 mb-4">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <iframe width="300" height="200" class="yt-frame"
+            src="https://www.youtube.com/embed/yGBEtDhF6aQ?si=B99GjXkf6ABSZCl_" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+        </div>
+        <div class="col-12 col-md-6 col-xl-2">
+          <h4>Quick Links</h4>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-caret-right me-2"></i>Home</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>Features</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>About</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>How it Works</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>FAQ's</li>
+          </ul>
+          
+        </div>
+        <div class="col-12 col-md-6 col-xl-2">
+          <h4>Out Services</h4>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-caret-right me-2"></i>Quotation</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>Invoice</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>Proforma Invoice</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>Purchase Order</li>
+            <li><i class="fa-solid fa-caret-right me-2"></i>Delivery Challan</li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <h4>Get In Touch</h4>
+          <ul class="list-unstyled">
+            <li>+91-95109-62986</li>
+            <li>sales@praxinfo.com</li>
+            <li>support@quotationmaker.app</li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-xl-2">
+          <p>Download Now</p>
+          <div class="download-images d-flex flex-column gap-2">
+            <a href="https://play.google.com/store/apps/details?id=com.praxinfo.quotationmaker&amp;utm_source=pdf&amp;utm_medium=website&amp;utm_campaign=purchase_order"
+              target="_blank">
+              <img src="./img/Google-play.png" alt="Appstore image">
+            </a>
+            <a href="https://apps.apple.com/us/app/quotation-maker/id1618883268?utm_source=pdf&amp;utm_medium=website&amp;utm_campaign=purchase_order"
+              target="_blank">
+              <img src="./img/app-store.png" alt="Playstore image">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="row footer-row p-2 d-flex Sticky-bottom  justify-content-center">
+    © 2024 PRAXINFO | All Rights Reserved.
+  </div>
 
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+
+<script>
+    const carousel = document.getElementById('testimonial-carousel');
+  const scrollAmount = 320;
+
+  // Clone cards to simulate infinite scroll
+  const cards = carousel.children;
+  const totalCards = cards.length;
+
+  // Clone the cards to create a loop effect
+  for (let i = 0; i < totalCards; i++) {
+    carousel.appendChild(cards[i].cloneNode(true));
+  }
+
+  let scrollPos = 0;
+
+  function autoScroll() {
+    scrollPos += scrollAmount;
+    if (scrollPos >= carousel.scrollWidth / 2) {
+      scrollPos = 0; // reset to beginning (first real card set)
+      carousel.scrollTo({ left: 0, behavior: 'auto' }); // jump instantly
+    } else {
+      carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+    }
+  }
+
+  // Scroll every 3 seconds
+  setInterval(autoScroll, 3000);
+  //  button 
+  document.getElementById('scrollLeft').addEventListener('click', () => {
+    scrollPos -= scrollAmount;
+    if (scrollPos < 0) scrollPos = 0;
+    carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+  });
+
+  document.getElementById('scrollRight').addEventListener('click', () => {
+    scrollPos += scrollAmount;
+    carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+  });
+</script>
+
+
+  <script>   const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+
+  // Connect custom buttons
+  document.getElementById('customPrevBtn').addEventListener('click', () => swiper.slidePrev());
+  document.getElementById('customNextBtn').addEventListener('click', () => swiper.slideNext());</script>
 </body>
 
 </html>
